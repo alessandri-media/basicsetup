@@ -1,0 +1,31 @@
+lib.languageMenu = HMENU
+lib.languageMenu {
+    special = language
+    special.value = 0, 1, 2, 3
+    wrap = <ul>|</ul>
+    1 = TMENU
+    1 {
+        NO {
+            linkWrap = <li>|</li>
+            doNotLinkIt = 1
+            stdWrap.override = EN || DE || FR || IT
+            stdWrap {
+                typolink {
+                    parameter.data = page:uid
+                    additionalParams = &L=0 || &L=1 || &L=2 || &L=3
+                    ATagParams = hreflang="en_GB" || hreflang="de_CH" || hreflang="fr_CH" || hreflang="it_CH"
+                    addQueryString = 1
+                    addQueryString.exclude = L,id,no_cache
+                    addQueryString.method = GET
+                    no_cache = 0
+                }
+            }
+        }
+        ACT = 1
+        ACT {
+            allWrap = <li class="active">|</li>
+            stdWrap.override = EN || DE || FR || IT
+            doNotLinkIt = 1
+        }
+    }
+}

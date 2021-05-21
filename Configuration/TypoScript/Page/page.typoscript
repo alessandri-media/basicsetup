@@ -1,0 +1,145 @@
+page = PAGE
+page {
+
+    typeNum = 0
+
+    bodyTag >
+
+    bodyTagCObject = COA
+    bodyTagCObject {
+        wrap = <body class="|">
+        10 = TEXT
+        10 {
+            data = pagelayout
+            wrap = layout-|
+        }
+        20 = TEXT
+        20 {
+            field = uid
+            noTrimWrap = | page-||
+        }
+        30 = HMENU
+        30 {
+            special = rootline
+            special.range = 0|-1
+            1 = TMENU
+            1 {
+                NO {
+                    stdWrap.override.cObject = TEXT
+                    stdWrap.override.cObject {
+                        field = uid
+                        noTrimWrap = | rootline-||
+                    }
+                    doNotLinkIt = 1
+                }
+            }
+        }
+    }
+
+    10 = FLUIDTEMPLATE
+    10 {
+        # Template names will be generated automatically by converting the applied
+        # backend_layout, there is no explicit mapping necessary anymore.
+        #
+        # BackendLayout Key
+        # subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        #
+        # Backend Record
+        # uid: 1 -> 1.html
+        #
+        # Database Entry
+        # value: -1 -> None.html
+        # value: pagets__subnavigation_right_2_columns -> SubnavigationRight2Columns.html
+        templateName = TEXT
+        templateName {
+            cObject = TEXT
+            cObject {
+                data = pagelayout
+                required = 1
+                case = uppercamelcase
+                split {
+                    token = pagets__
+                    cObjNum = 1
+                    1.current = 1
+                }
+            }
+            ifEmpty = Default
+        }
+        settings {
+            pages {
+                search = 7
+            }
+        }
+        variables {
+            content < styles.content.get
+        }
+        templateRootPaths {
+            0 = EXT:basicsetup/Resources/Private/Templates/Page/
+            1 = {$page.fluidtemplate.templateRootPath}
+        }
+        partialRootPaths {
+            0 = EXT:basicsetup/Resources/Private/Partials/Page/
+            1 = {$page.fluidtemplate.partialRootPath}
+        }
+        layoutRootPaths {
+            0 = EXT:basicsetup/Resources/Private/Layouts/Page/
+            1 = {$page.fluidtemplate.layoutRootPath}
+        }
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = media
+            }
+            20 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            20 {
+                levels = 3
+                as = mainMenu
+            }
+            30 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+            30 {
+                languages = auto
+                as = languageMenu
+            }
+            40 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            40 {
+              special = directory
+              special.value = {$page.footerMenu}
+              levels = 1
+              includeSpacer = 1
+              as = footerMenu
+            }
+        }
+    }
+
+    headerData {
+        1575532357 = TEXT
+        1575532357.value (
+
+        )
+    }
+
+    includeCSSLibs {
+    }
+
+    includeCSS {
+    }
+
+    includeJSLibs {
+    }
+
+    includeJS {
+
+    }
+
+    includeJSFooterlibs {
+    }
+
+    includeJSFooter {
+    }
+
+    footerData {
+        1575533428 = TEXT
+        1575533428.value (
+        )
+    }
+}
