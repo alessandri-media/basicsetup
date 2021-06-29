@@ -1,0 +1,32 @@
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+  - { resource: "EXT:rte_ckeditor_fontawesome/Configuration/RTE/PluginFA5.yaml" }
+
+editor:
+  config:
+    stylesSet:
+      - { name: "Lead", element: "p", attributes: { class: "lead" } }
+      - { name: "List unstyled", element: "ul", attributes: { class: "list-unstyled" } }
+      - { name: "Table", element: "table", attributes: { class: "table" } }
+      - { name: "Button Primary", element: "a", attributes: { class: "btn btn-primary" } }
+      - { name: "Button Secondary", element: "a", attributes: { class: "btn btn-secondary" } }
+      - { name: "Button Primary Oulined", element: "a", attributes: { class: "btn btn-outline-primary" } }
+      - { name: "Button Secondary Oulined", element: "a", attributes: { class: "btn btn-outline-secondary" } }
+    toolbarGroups:
+      - { name: styles, groups: [ styles, formats, 'ckeditor_fa5' ] }
+      - { name: basicstyles, groups: [ basicstyles, align ] }
+      - { name: paragraph, groups: [ list ] }
+      - { name: links,   groups: [ links ] }
+      - { name: clipboard, groups: [ clipboard, undo ] }
+      - { name: insert }
+      - { name: icons, groups: [ ckeditor_fa5 ] }
+      - { name: document, groups: [ mode ] }
+    removeButtons:
+      - Underline
+      - Strike
+    removePlugins:
+      - image
+      - specialchar
+      - horizontalrule

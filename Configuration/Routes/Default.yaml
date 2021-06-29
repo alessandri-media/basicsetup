@@ -1,0 +1,2 @@
+imports:
+  - { resource: 'EXT:basicsetup/Configuration/Routes/News.yaml' }

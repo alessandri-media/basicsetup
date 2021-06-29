@@ -1,0 +1,15 @@
+<li class="nav-item {f:if(condition: '{menuItem.active}', then: 'active')} {f:if(condition: '{menuItem.children}', then: 'dropdown')}">
+	<f:if condition="{menuItem.children}">
+		<f:then>
+			<a class="nav-link dropdown-toggle" href="#" id="navbar-dropdown-{menuItem.data.uid}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{menuItem.title}</a>
+			<div class="dropdown-menu" aria-labelledby="navbar-dropdown-{menuItem.data.uid}">
+				<f:for each="{menuItem.children}" as="childrenItem">
+							<f:render partial="Bootstrap/v4.x/Navbar/NavItem/Link.html" arguments="{menuItem: childrenItem, class: 'dropdown-item'}"/>
+				</f:for>
+			</div>
+		</f:then>
+		<f:else>
+			<f:render partial="Bootstrap/v4.x/Navbar/NavItem/Link.html" arguments="{menuItem: menuItem, class: 'nav-link'}"/>
+		</f:else>
+	</f:if>
+</li>

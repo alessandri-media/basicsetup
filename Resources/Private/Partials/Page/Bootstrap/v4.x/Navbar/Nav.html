@@ -1,0 +1,7 @@
+<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+	<ul class="navbar-nav">
+		<f:for each="{mainMenu}" as="mainMenuItem">
+			<f:render partial="Bootstrap/v4.x/Navbar/NavItem.html" arguments="{menuItem: mainMenuItem}"/>
+		</f:for>
+	</ul>
+</div>

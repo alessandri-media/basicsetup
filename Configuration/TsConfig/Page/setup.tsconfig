@@ -1,0 +1,2 @@
+@import 'EXT:basicsetup/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts/setup.tsconfig'
+@import 'EXT:basicsetup/Configuration/TsConfig/Page/RTE/setup.tsconfig'
