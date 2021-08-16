@@ -6,8 +6,10 @@ imports:
 
 editor:
   config:
+    contentsCss: "EXT:basicsetup/Resources/Public/Css/editor.css"
     stylesSet:
       - { name: "Lead", element: "p", attributes: { class: "lead" } }
+      - { name: "Small", element: "p", attributes: { class: "small" } }
       - { name: "List unstyled", element: "ul", attributes: { class: "list-unstyled" } }
       - { name: "Table", element: "table", attributes: { class: "table" } }
       - { name: "Button Primary", element: "a", attributes: { class: "btn btn-primary" } }
