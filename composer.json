@@ -2,7 +2,7 @@
 	"name": "alessandrimedia/basicsetup",
 	"description": "TYPO3 CMS basic setup",
 	"type": "typo3-cms-extension",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"require": {
 		"typo3/cms-core": "~10.4"
 	},
