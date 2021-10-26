@@ -7,30 +7,46 @@ page {
 
     bodyTagCObject = COA
     bodyTagCObject {
-        wrap = <body class="|">
-        10 = TEXT
+
+        stdWrap.noTrimWrap = |<body |>|
+
+        10 = COA
         10 {
-            data = pagelayout
-            wrap = layout-|
-        }
-        20 = TEXT
-        20 {
-            field = uid
-            noTrimWrap = | page-||
-        }
-        30 = HMENU
-        30 {
-            special = rootline
-            special.range = 0|-1
-            1 = TMENU
-            1 {
-                NO {
-                    stdWrap.override.cObject = TEXT
-                    stdWrap.override.cObject {
-                        field = uid
-                        noTrimWrap = | rootline-||
+
+            wrap = class="|"
+
+            10 = TEXT
+            10 {
+                data = pagelayout
+                wrap = layout-|
+            }
+
+            20 = TEXT
+            20 {
+                field = uid
+                noTrimWrap = | page-||
+            }
+
+            30 = TEXT
+            30 {
+                field = pid
+                noTrimWrap = | parent-||
+            }
+
+            40 = HMENU
+            40 {
+                special = rootline
+                special.range = 0|-1
+                1 = TMENU
+                1 {
+                    NO {
+                        stdWrap.override.cObject = TEXT
+                        stdWrap.override.cObject {
+                            field = uid
+                            noTrimWrap = | rootline-||
+                        }
+                        doNotLinkIt = 1
                     }
-                    doNotLinkIt = 1
                 }
             }
         }
