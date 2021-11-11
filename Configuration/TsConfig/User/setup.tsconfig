@@ -1,2 +1,1 @@
-@import 'EXT:basicsetup/Configuration/TsConfig/User/TCEMAIN/setup.tsconfig'
 @import 'EXT:basicsetup/Configuration/TsConfig/User/Option/setup.tsconfig'
