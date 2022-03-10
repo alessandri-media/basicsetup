@@ -1,17 +1,19 @@
 config {
-    no_cache = 0
-    removeDefaultJS = 1
-    admPanel = 1
-    prefixLocalAnchors = all
-    headerComment =
-    sendCacheHeaders = 1
+  no_cache = 0
+  removeDefaultJS = 1
+  admPanel = 1
+  prefixLocalAnchors = all
+  headerComment =
+  sendCacheHeaders = 1
+  no_cache = 0
 }
 
 page {
-    fluidtemplate {
-        layoutRootPath =
-        templateRootPath =
-        partialRootPath =
-    }
-    footerMenu =
+  fluidtemplate {
+    layoutRootPath =
+    templateRootPath =
+    partialRootPath =
+  }
+
+  footerMenu =
 }
