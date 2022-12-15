@@ -5,7 +5,6 @@ config {
   prefixLocalAnchors = all
   headerComment =
   sendCacheHeaders = 1
-  no_cache = 0
 }
 
 page {
